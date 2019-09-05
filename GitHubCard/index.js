@@ -41,6 +41,8 @@ const followersArray = [
 	'bigknell'
 ];
 
+followersArray.forEach(addGithubUserCard);
+
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
 
