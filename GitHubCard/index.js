@@ -34,6 +34,20 @@ axios.get('https://api.github.com/users/jasynmarais')
 
 const followersArray = [];
 
+function githubCardComponent(profileData) {
+  // Create elements for component
+  const profileCard = document.createElement('div');
+  const profileImg = document.createElement('img');
+  const cardInfo = document.createElement('div');
+  const cardH3 = document.createElement('h3');
+  const username = document.createElement('p');
+  const location = document.createElement('p');
+  const profile = document.createElement('p');
+  const profileLink = document.createElement('a');
+  const followers = document.createElement('p');
+  const following = document.createElement('p');
+  const bio = document.createElement('p');
+}
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
 
