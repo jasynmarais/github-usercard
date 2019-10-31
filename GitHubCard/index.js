@@ -33,7 +33,7 @@ axios.get('https://api.github.com/users/jasynmarais')
 */
 
 // Add Github handles to array
-const followersArray = [ 'AbdelIdir', 'Ofega', 'alisonludick', 'nedssoft', 'Godnoken'];
+const followersArray = [ 'AbdelIdir', 'Ofega', 'alisonludick', 'nedssoft', 'ELAndrews'];
 
 // Iterate over array and add data for each user to DOM
 followersArray.forEach(user => {
