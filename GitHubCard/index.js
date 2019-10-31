@@ -5,7 +5,7 @@
 
 axios.get('https://api.github.com/users/jasynmarais')
     .then(response => {
-      console.log(response);
+      console.log(response.data);
     })
     .catch(err => {
       console.log(err);
@@ -53,6 +53,10 @@ function githubCardComponent(profileData) {
   cardInfo.classList.add('card-info');
   cardH3.classList.add('name');
   username.classList.add('username');
+
+  // Add paths to profileImg and profileLink
+  profileImg.src = response.data.avatar_url;
+  profileLink.href = response.data.html_url
 }
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
