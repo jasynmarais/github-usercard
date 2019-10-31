@@ -47,6 +47,12 @@ function githubCardComponent(profileData) {
   const followers = document.createElement('p');
   const following = document.createElement('p');
   const bio = document.createElement('p');
+
+  // Add classes to elements
+  profileCard.classList.add('card');
+  cardInfo.classList.add('card-info');
+  cardH3.classList.add('name');
+  username.classList.add('username');
 }
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
