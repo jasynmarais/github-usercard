@@ -32,7 +32,19 @@ axios.get('https://api.github.com/users/jasynmarais')
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+// Add Github handles to array
+const followersArray = [ 'AbdelIdir', 'Ofega', 'alisonludick', 'nedssoft', 'Godnoken'];
+
+// Iterate over array and add data for each user to DOM
+followersArray.forEach(user => {
+  axios.get(`https://api.github.com/users/${user}`)
+    .then(response => {
+      githubCardComponent(response)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+})
 
 function githubCardComponent(response) {
   // Create elements for component
@@ -62,7 +74,7 @@ function githubCardComponent(response) {
   cardH3.textContent = response.data.name;
   username.textContent = response.data.login;
   location.textContent = `Location: ${response.data.location}`;
-  profile.textContent = 'Profile:';
+  profile.textContent = 'Profile: ';
   profileLink.textContent = response.data.html_url;
   followers.textContent = response.data.followers;
   following.textContent = response.data.following;
