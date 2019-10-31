@@ -5,7 +5,7 @@
 
 axios.get('https://api.github.com/users/jasynmarais')
     .then(response => {
-      console.log(response.data);
+      githubCardComponent(response);
     })
     .catch(err => {
       console.log(err);
@@ -34,7 +34,7 @@ axios.get('https://api.github.com/users/jasynmarais')
 
 const followersArray = [];
 
-function githubCardComponent(profileData) {
+function githubCardComponent(response) {
   // Create elements for component
   const profileCard = document.createElement('div');
   const profileImg = document.createElement('img');
@@ -67,6 +67,23 @@ function githubCardComponent(profileData) {
   followers.textContent = response.data.followers;
   following.textContent = response.data.following;
   bio.textContent = `Bio: ${response.data.bio}`;
+
+  // Append elements to the DOM
+  const cardsContainer = document.querySelector('.cards');
+  cardsContainer.appendChild(profileCard);
+  profileCard.appendChild(profileImg);
+  profileCard.appendChild(cardInfo);
+  cardInfo.appendChild(cardH3);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.appendChild(profileLink);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+
+  // Return component
+  return profileCard;
 }
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
